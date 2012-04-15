@@ -13,7 +13,7 @@ public class Logic {
 	private int BOARD_SIZE=8;
 	ServiceFunctions serviceobj=new ServiceFunctions();
 	private int boards[][];
-	 Logic()
+	 public Logic()
 	{
 		setBoards(new int[getBOARD_SIZE()][getBOARD_SIZE()]);
 		setBoards(ServiceFunctions.InitMass(0, 0)); //инициализируем доску.

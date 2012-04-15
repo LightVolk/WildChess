@@ -3,6 +3,8 @@
  */
 package com.wildchess.ThirdSystems;
 
+import com.wildchess.Logic.Logic;
+
 /**
  * @author Konstantin
  *  Вспомогательные функции, используемые в других классах
@@ -10,15 +12,18 @@ package com.wildchess.ThirdSystems;
 
 public class ServiceFunctions {
 	
-public interface InitSystem {
-	int[][] InitMass(int i,int j);
-	
-}
 	
 	
-	public static int[][] InitMass(int i,int j)
-	{
-		int[][] Massiv=new int[i][j];
+	
+	public static int[][] InitMass(int X,int Y)
+	{Logic board=new Logic();
+		int[][] Massiv=new int[X][Y];
+		
+		for(int i=0;i<board.getBOARD_SIZE();i++)
+		{
+			Massiv[board.getBOARD_SIZE()][board.getBOARD_SIZE()]=0;
+		}
+		
 		return Massiv;
 		
 		

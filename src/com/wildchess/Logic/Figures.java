@@ -17,7 +17,7 @@ public class Figures {
 	
 	
     // перечисление типов фигур
-	private enum pieceType {
+	 enum pieceType {
 		pawn, bishop, knight, rook, queen, king
 	};
 //  определяем возможные цвета фигур
@@ -56,6 +56,9 @@ public class Figures {
 	{
 		return state;
 	}
+	
+	pieceType Type_of_Figure;   // объявляем тип фигуры для использования внешними классами.
+	
 	//public int[][] getPossibleSteps()
 //	{
 		//return 
