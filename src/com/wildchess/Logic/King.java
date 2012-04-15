@@ -22,11 +22,12 @@ public class King implements Piece {
 	public int[][] GetPossibleSteps() {
 		// TODO Auto-generated method stub
 		Figures king=new Figures();
+		Logic logicKing=new Logic();
 		int X=king.getPositionX();
 		int Y=king.getPositionY();
 		int[][] Massiv=new int[X][Y];
 		
-		
+		Massiv=logicKing.getBoards();  // забираем данные доски.
 		
 		return Massiv;
 	}
