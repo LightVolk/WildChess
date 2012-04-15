@@ -10,13 +10,49 @@ import java.util.ArrayList;
  *
  */
 public class Figures {
-
+    // перечисление типов фигур
+	private enum pieceType {
+		pawn, bishop, knight, rook, queen, king
+	};
+//  определяем возможные цвета фигур
+	private enum objectColour {
+		black, white
+	};
+//   состояние фигуры
+	private enum pieceState {
+		alive, dead
+	};
+//   состояние игры- все нормально, шах белыми,мат белыми, шах черными,мат черными ,пат
+	private enum gameState {
+		allClear, whiteCheck, whiteMate, blackCheck, blackMate, stalemate
+	};
+// статус хода   успешный, неуспешный,возможный
+	private enum moveStatus {
+		success, fail, promote
+	};
+	
+	private int x,y; // координаты шахматной фигуры на доске
+	
+	public interface Piece {     
+		void Go(int x,int y);   
+	}
+	
+	public int getPositionX()   // получить координату по линии a-h
+	{
+		return x;
+	}
+	public int getPositionY()   // получить координату по линии 1-8
+	{
+		return y;
+	}
+	
 	Figures()
 	{
 		ArrayList figures=new ArrayList(); // создаем коллекцию фигур.
 	// тест. обернуть в метод.	
 		// добавить объекты вида белый король,черный король.и тд.
 		// вместо null поставить значения массива border для инициализации фигур на доске.
+		/*
 		Object WhiteKing = null,WhiteQween=null;// определяем список фигур на доске.(тест)
 		Object WhiteKon=null,WhiteBishop=null,WhiteLadia=null,WhitePeshka=null;    
 		Object BlackKing=null,BlackQween=null,BlackKon=null,BlackBishop=null,BlackLadia=null,BlackPeshka=null;
@@ -41,7 +77,7 @@ public class Figures {
 			figures.add(WhiteBishop);
 			figures.add(WhiteKon);
 		}
-		
+	*/	
 	}
 	
 	
