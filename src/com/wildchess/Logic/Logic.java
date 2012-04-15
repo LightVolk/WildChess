@@ -15,10 +15,22 @@ public class Logic {
 	private int boards[][];
 	 Logic()
 	{
-		boards = new int[8][8];
-		boards=ServiceFunctions.InitMass(0, 0); //инициализируем доску.
+		setBoards(new int[8][8]);
+		setBoards(ServiceFunctions.InitMass(0, 0)); //инициализируем доску.
 		
 	}
-	//private 
+	/**
+	 * @return the boards
+	 */
+	public int[][] getBoards() {
+		return boards;
+	}
+	/**
+	 * @param boards the boards to set
+	 */
+	public void setBoards(int boards[][]) {
+		this.boards = boards;
+	}
+	 
 	
 }

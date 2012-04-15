@@ -21,7 +21,7 @@ public class Figures {
 		pawn, bishop, knight, rook, queen, king
 	};
 //  определяем возможные цвета фигур
-	private enum objectColour {
+	private enum FigureColour {
 		black, white
 	};
 //   состояние фигуры
@@ -37,10 +37,11 @@ public class Figures {
 		success, fail, promote
 	};
 	
-	
+	// определяем интерфейс Piece с методами Go (сделать ход) и GetPossibleSteps 
+	//( получить координаты возможных ходов)
 	public interface Piece {     
 		void Go(int x,int y);
-		void getPossibleSteps();
+		int[][] GetPossibleSteps();
 	}
 	
 	public int getPositionX()   // получить координату по линии a-h
@@ -51,10 +52,14 @@ public class Figures {
 	{
 		return y;
 	}
-	public peaceState getState()  // получить статус фигуры  
+	public pieceState getState()  // получить статус фигуры  
 	{
 		return state;
 	}
+	//public int[][] getPossibleSteps()
+//	{
+		//return 
+//	}
 	Figures()
 	{
 		ArrayList figures=new ArrayList(); // создаем коллекцию фигур.

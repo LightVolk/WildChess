@@ -5,7 +5,7 @@ package com.wildchess.ThirdSystems;
 
 /**
  * @author Konstantin
- *
+ *  Вспомогательные функции, используемые в других классах
  */
 
 public class ServiceFunctions {
@@ -23,4 +23,5 @@ public interface InitSystem {
 		
 		
 	}
+	
 }
