@@ -10,6 +10,12 @@ import java.util.ArrayList;
  *
  */
 public class Figures {
+	
+	
+	private pieceState state;  // возможные состояния фигуры (жив,мертв)
+	private int x,y; // координаты шахматной фигуры на доске
+	
+	
     // перечисление типов фигур
 	private enum pieceType {
 		pawn, bishop, knight, rook, queen, king
@@ -31,10 +37,10 @@ public class Figures {
 		success, fail, promote
 	};
 	
-	private int x,y; // координаты шахматной фигуры на доске
 	
 	public interface Piece {     
-		void Go(int x,int y);   
+		void Go(int x,int y);
+		void getPossibleSteps();
 	}
 	
 	public int getPositionX()   // получить координату по линии a-h
@@ -45,7 +51,10 @@ public class Figures {
 	{
 		return y;
 	}
-	
+	public peaceState getState()  // получить статус фигуры  
+	{
+		return state;
+	}
 	Figures()
 	{
 		ArrayList figures=new ArrayList(); // создаем коллекцию фигур.
